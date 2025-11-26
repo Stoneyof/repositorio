@@ -1,0 +1,25 @@
+import * as fs from "fs";
+
+// 1. Leitura da entrada padrão
+const input: string = fs.readFileSync(0, "utf8").trim();
+
+// 2. Separação das linhas
+const linhas: string[] = input.split("\n");
+
+const perimetro: string[] = linhas[0].split(" ");
+
+const a_base: number = parseFloat(perimetro[0]);
+const b_lado: number = parseFloat(perimetro[1]);
+const c_altura: number = parseFloat(perimetro[2]);
+
+const area_triangulo: number = (a_base * c_altura) / 2
+const area_circulo: number = 3.14159 * (c_altura ** 2)
+const area_trapezio: number = ((a_base + b_lado) * c_altura) / 2
+const area_quadrado: number = b_lado * b_lado
+const area_retangulo: number = a_base * b_lado
+
+console.log(`TRIANGULO: ${area_triangulo.toFixed(3)}`);
+console.log(`CIRCULO: ${area_circulo.toFixed(3)}`);
+console.log(`TRAPEZIO: ${area_trapezio.toFixed(3)}`);
+console.log(`QUADRADO: ${area_quadrado.toFixed(3)}`);
+console.log(`RETANGULO: ${area_retangulo.toFixed(3)}`);
